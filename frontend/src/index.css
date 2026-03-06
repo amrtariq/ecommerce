@@ -1,3 +1,35 @@
 main {
     min-height: 80vh;
-} 
+}
+
+/* Remove black border/outline that browsers add to images inside anchor tags */
+a img,
+a .card-img-top {
+    border: none;
+    outline: none;
+    display: block;
+}
+
+/* Remove default anchor styling around images */
+a:has(img),
+a:has(.card-img-top) {
+    display: block;
+    border: none;
+    outline: none;
+}
+
+/* Remove Bootstrap Card border */
+.card {
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* No underline on product name link by default, only show on hover */
+/* NOTE: <a> wraps <Card.Title>, so the anchor is the PARENT of .card-title */
+.card-body > a {
+    text-decoration: none;
+}
+
+.card-body > a:hover {
+    text-decoration: underline;
+}
